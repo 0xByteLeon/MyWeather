@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import learn.com.myweather.R;
+import learn.com.myweather.service.AutoUpdateService;
 import learn.com.myweather.util.HttpCallbackListener;
 import learn.com.myweather.util.HttpUtil;
 import learn.com.myweather.util.Utility;
@@ -51,6 +52,8 @@ public class WeatherActivity extends Activity implements View.OnClickListener {
             publishText.setText("正在同步中...");
             weatherInfoLayout.setVisibility(View.INVISIBLE);
             cityNameText.setVisibility(View.INVISIBLE);
+            Intent intent = new Intent(WeatherActivity.this, AutoUpdateService.class);
+            startService(intent);
             queryWeatherCode(countyCode);
         } else {
             showWeather();
