@@ -23,7 +23,7 @@ import learn.com.myweather.util.Utility;
 /**
  * Created by MoonlightSW on 2016/1/10.
  */
-public class WeatherActivity extends Activity implements View.OnClickListener {
+public class WeatherActivity extends AppCompatActivity implements View.OnClickListener {
     private LinearLayout weatherInfoLayout;
     private TextView cityNameText;
     private TextView publishText;
@@ -37,7 +37,6 @@ public class WeatherActivity extends Activity implements View.OnClickListener {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.weather_layout);
         weatherInfoLayout = (LinearLayout) findViewById(R.id.weather_info_layout);

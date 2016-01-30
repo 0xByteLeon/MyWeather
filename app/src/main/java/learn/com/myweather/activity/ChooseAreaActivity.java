@@ -15,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +29,7 @@ import learn.com.myweather.util.HttpCallbackListener;
 import learn.com.myweather.util.HttpUtil;
 import learn.com.myweather.util.Utility;
 
-public class ChooseAreaActivity extends Activity {
+public class ChooseAreaActivity extends AppCompatActivity {
 
     public static final int LEVEL_PROVINCE =  0;
     public static final int LEVEL_CITY = 1;
@@ -49,11 +50,9 @@ public class ChooseAreaActivity extends Activity {
     private City selectedCity;
     private County selectedCounty;
     private int currentLevel;
-
     private boolean isFromWeatherActivity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         isFromWeatherActivity = getIntent().getBooleanExtra("from_weather_activity",false);
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
